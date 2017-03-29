@@ -1,8 +1,21 @@
-const assert = require('assert');
-const <%- name %> = require('<%- filepath %>');
+/* global expect */
+const React = require('react');
 
-describe('<%- name %>', function () {
-  it('has a test', function () {
-    assert(false, '<%- name %> should have a test');
+const {shallow} = require('enzyme');
+const toJson = require('enzyme-to-json').default;
+
+const <%- name %> = require('<%- filepath.replace('.jsx', '') %>');
+
+describe('<%- name %>', () => {
+  let wrapper;
+
+  beforeAll(() => {
+    wrapper = shallow(
+      <<%- name %> />
+    );
+  });
+
+  it('renders properly', () => {
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
