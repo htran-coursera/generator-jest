@@ -1,10 +1,9 @@
-/* global expect */
-const React = require('react');
+import React from 'react';
 
-const {shallow} = require('enzyme');
-const toJson = require('enzyme-to-json').default;
+import {shallow} from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-const <%- name %> = require('<%- filepath.replace('.jsx', '') %>');
+import <%- name %> from '<%- filepath.replace('.jsx', '') %>';
 
 describe('<%- name %>', () => {
   let wrapper;
