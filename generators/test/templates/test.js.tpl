@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 
@@ -14,7 +12,7 @@ describe('<%- name %>', () => {
     );
   });
 
-  it('renders properly', () => {
+  it('renders', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
